@@ -27,3 +27,21 @@ sudo gpasswd -d $USER имя_группы
 
 # Удаление группы:
 # sudo groupdel имя_группы
+
+# =============================================
+
+# Список групп в которые необходимо себя добавить:
+
+# realtime
+# audio
+# video
+# render
+# power
+# games
+
+# sudo usermod -aG realtime $USER
+# sudo usermod -aG audio $USER
+# sudo usermod -aG video $USER
+# sudo usermod -aG render $USER
+# sudo usermod -aG power $USER
+# sudo usermod -aG games $USER
