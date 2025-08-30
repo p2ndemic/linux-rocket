@@ -45,3 +45,5 @@ sudo gpasswd -d $USER имя_группы
 # sudo usermod -aG render $USER
 # sudo usermod -aG power $USER
 # sudo usermod -aG games $USER
+
+# =============================================
