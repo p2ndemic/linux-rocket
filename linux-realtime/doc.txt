@@ -20,10 +20,10 @@
 # sudo groupadd имя_группы
 
 # Добавление пользователя в группу:
-# sudo usermod -aG имя_группы ${USER} или sudo usermod -aG имя_группы ${USER}
+# sudo usermod -aG имя_группы $USER
 
 # Удаление пользователя из группы:
-sudo gpasswd -d ${USER} имя_группы
+sudo gpasswd -d $USER имя_группы
 
 # Удаление группы:
 # sudo groupdel имя_группы
