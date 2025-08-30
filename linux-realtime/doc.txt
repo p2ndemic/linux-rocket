@@ -1,0 +1,29 @@
+# Ref: https://wiki.archlinux.org/title/Realtime_kernel
+# Ref: https://wiki.cachyos.org/features/kernel/
+# Ref: https://dgpu-docs.intel.com/driver/client/overview.html
+# Ref: https://www.phoronix.com/review/intel-i915-xe-linux-2025
+# Ref: https://gitlab.freedesktop.org/drm/xe/kernel/-/issues/234 <- GUC/HUC не поддерживается драйвером XE для DG2 (Intel Arc Alchemist)
+# Ref: https://habr.com/ru/companies/otus/articles/460403/
+# Ref: https://techoverflow.net/2017/02/18/advantages-and-disadvantages-of-hugepages/
+# Ref: https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/performance_tuning_guide/sect-red_hat_enterprise_linux-performance_tuning_guide-configuring_transparent_huge_pages
+# Ref: https://docs.oracle.com/database/121/UNXAR/appi_vlm.htm#UNXAR428
+... TODO ...
+
+
+# Список всех групп:
+# cat /etc/group
+
+# Группы текущего пользователя:
+# groups
+
+# Создание группы:
+# sudo groupadd имя_группы
+
+# Добавление пользователя в группу:
+# sudo usermod -aG имя_группы ${USER} или sudo usermod -aG имя_группы ${USER}
+
+# Удаление пользователя из группы:
+sudo gpasswd -d ${USER} имя_группы
+
+# Удаление группы:
+# sudo groupdel имя_группы
