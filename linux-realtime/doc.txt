@@ -1,3 +1,4 @@
+# =============================================
 # Ref: https://wiki.archlinux.org/title/Realtime_kernel
 # Ref: https://wiki.cachyos.org/features/kernel/
 # Ref: https://dgpu-docs.intel.com/driver/client/overview.html
@@ -7,8 +8,11 @@
 # Ref: https://techoverflow.net/2017/02/18/advantages-and-disadvantages-of-hugepages/
 # Ref: https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/performance_tuning_guide/sect-red_hat_enterprise_linux-performance_tuning_guide-configuring_transparent_huge_pages
 # Ref: https://docs.oracle.com/database/121/UNXAR/appi_vlm.htm#UNXAR428
+# =============================================
+
 ... TODO ...
 
+# =============================================
 
 # Список всех групп:
 # cat /etc/group
