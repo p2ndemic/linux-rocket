@@ -111,3 +111,7 @@ sudo strings /proc/8435/environ | sort | uniq > ~/Desktop/gamescopereaper_envs.t
 # mesa_glthread=true
 # MESA_VK_ENABLE_SUBMIT_THREAD=true
 # =============================================
+
+
+# Удалить устаревшие hasvk драйверы из
+/usr/share/vulkan/icd.d/
