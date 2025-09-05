@@ -1,6 +1,47 @@
-# Ref: https://wiki.archlinux.org/title/Improving_performance
 # =============================================
-# Проверить какие переменные окружения задает приложение:
+# Ref: https://wiki.archlinux.org/title/Improving_performance
+# Ref: https://wiki.archlinux.org/title/Improving_performance#irqbalance
+# =============================================
+
+# =============================================
+# irqbalance
+# =============================================
+
+Насчет демона irqbalance:
+В вики Arch Linux указано что служба/демон irqbalance в некоторых случаях может снизить производительность. У меня нет сомнения не верить им. irqbalance действительно конфликтует планировщиками ядра (bore-scheduler и др.) и расширяемыми планировщиками sched-ext (scx_lavd и др.). Лучше полностью отлючить и удалить irqbalance для избежания конфликтов.
+
+sudo systemctl disable --now irqbalance
+sudo pacman -Rns irqbalance
+
+# =============================================
+
+
+# =============================================
+#    Ananicy-cpp
+# =============================================
+Еще непонятна процедура взамодействия CPU Schedulers и sched-ext с Ananicy-cpp. К примеру GenAI Deepseek советует любо полностью отключить Ananicy-cpp или либо использовать этот инструмент с со стандартными правилами.
+Возможно все же лучше отключить до тщательного тестирования.
+
+sudo systemctl status ananicy-cpp.service
+sudo systemctl disable --now ananicy-cpp.service
+sudo pacman -Rns ananicy-cpp
+sudo pacman -Rns cachyos-ananicy-rules
+
+# =============================================
+
+
+# =============================================
+# Настрйока XFS
+# =============================================
+# Ref: https://wiki.archlinux.org/title/XFS
+# =============================================
+
+
+# =============================================
+
+# =============================================
+# Проверить какие переменные окружения задает приложение
+# =============================================
 # На примере Stem и gamescope: В параметрах запуска Steam пропишите агрументы Gamescope:
 # gamescope --rt --immediate-flips -w 1680 -h 1050 -W 2560 -H 1600 -f -r 120 --force-grab-cursor -- %command%
 # Запустите игру
