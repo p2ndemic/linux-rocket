@@ -1,3 +1,4 @@
+# Ref: https://wiki.archlinux.org/title/Improving_performance
 # =============================================
 # Проверить какие переменные окружения задает приложение:
 # На примере Stem и gamescope: В параметрах запуска Steam пропишите агрументы Gamescope:
