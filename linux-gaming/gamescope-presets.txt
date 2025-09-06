@@ -1,1 +1,13 @@
+gamescope -W 2560 -H 1600 -w 1280 -h 800 -f -r 120 -- %command%
 
+gamescope -W 2560 -H 1600 -w 1280 -h 800 -f -r 120 -S integer -- %command%
+
+gamescope -W 2560 -H 1600 -w 1600 -h 900 -f -r 120 -S fit -- %command%
+
+gamescope -W 2560 -H 1600 -w 1680 -h 1050 -f -r 120 -- %command%
+
+gamescope -W 2560 -H 1600 -w 1680 -h 1050 -f -r 120 --mangoapp -- %command%
+
+gamescope --rt --immediate-flips -W 2560 -H 1600 -w 1680 -h 1050 -f -r 120 --force-grab-cursor -- %command%
+
+gamescope --rt --immediate-flips -W 2560 -H 1600 -w 1680 -h 1050 -f -r 120 --force-grab-cursor --mangoapp -- %command%
