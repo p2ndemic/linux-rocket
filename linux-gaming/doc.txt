@@ -1,3 +1,13 @@
+# https://wiki.archlinux.org/title/Gaming
+# https://wiki.archlinux.org/title/Improving_performance
+# https://wiki.archlinux.org/title/Wine#Performance
+# https://wiki.archlinux.org/title/Intel_graphics
+# https://wiki.archlinux.org/title/AMDGPU
+# https://wiki.gentoo.org/wiki/AMDGPU
+
+# Sound:
+# https://forums.linuxmint.com/viewtopic.php?f=42&t=44862
+
 # =============================================
 # Ref: https://wiki.archlinux.org/title/Improving_performance
 # Ref: https://wiki.archlinux.org/title/Improving_performance#irqbalance
