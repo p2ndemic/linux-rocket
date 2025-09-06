@@ -1,3 +1,7 @@
+# Mesa Overlay:
+# Ref: https://cgit.freedesktop.org/mesa/mesa/tree/src/vulkan/overlay-layer/README?id=add4b8930a219008731f76830ffc12b260b7d1da
+
+
 gamescope -W 2560 -H 1600 -w 1280 -h 800 -f -r 120 -- %command%
 
 gamescope -W 2560 -H 1600 -w 1280 -h 800 -f -r 120 -S integer -- %command%
