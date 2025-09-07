@@ -5,7 +5,9 @@
 # Исправление:
 
 # 1. Systemd-Resolved. Найди строку MulticastDNS= и измени её значение на no. Если такой строки нет, добавь её в секцию [Resolve]:
-# /etc/systemd/resolved.conf
+# Готовый конфиг: https://github.com/p2ndemic/dotfiles/blob/main/etc/systemd/resolved.conf.d/99-custom-dns.conf.bak
+
+sudo nano /etc/systemd/resolved.conf
 [Resolve]
 MulticastDNS=no
 
