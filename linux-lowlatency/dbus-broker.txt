@@ -1,0 +1,12 @@
+# На Gnome Wayland я столкнулся со следующей ошибкой:
+# sudo: journalctl -p 4 -xb | sort | uniq
+# dbus-broker-launch[727]: Activation request for 'org.freedesktop.home1' failed: The systemd unit 'dbus-org.freedesktop.home1.service' could not be found.
+
+# Ошибка возникает из-за отклченной службы dbus-broker (!), что очень странно:
+
+❯ systemctl status dbus-broker
+● dbus-broker.service - D-Bus System Message Bus
+     Loaded: loaded (/usr/lib/systemd/system/dbus-broker.service; disabled; preset: disabled)
+
+# Исправление. Активировать и запусть службу dbus-broker
+systemctl enable --now dbus-broker
