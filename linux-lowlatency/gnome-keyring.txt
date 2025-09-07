@@ -1,0 +1,10 @@
+# Предотвращение запуска демона:
+# Создай или отредактируй файл ~/.config/gnome-keyring/gnome-keyring-disable
+# Наличие этого файла указывает системе не запускать GNOME Keyring
+touch ~/.config/gnome-keyring/gnome-keyring-disable
+
+# Отключение служб [дополнительно]:
+# systemctl status gnome-keyring-daemon
+
+sudo systemctl disable --now gnome-keyring-daemon
+sudo systemctl mask gnome-keyring-daemon
