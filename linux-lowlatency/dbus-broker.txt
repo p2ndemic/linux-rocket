@@ -8,5 +8,10 @@
 ● dbus-broker.service - D-Bus System Message Bus
      Loaded: loaded (/usr/lib/systemd/system/dbus-broker.service; disabled; preset: disabled)
 
-# Исправление. Активировать и запусть службу dbus-broker
+# Исправление:
+# 1. Активировать и запусть службу dbus-broker
 systemctl enable --now dbus-broker
+
+# 2. Деактивировать systemd-homed
+# systemctl status systemd-homed
+sudo systemctl disable --now systemd-homed
