@@ -44,6 +44,7 @@ sudo gpasswd -d $USER имя_группы
 # render
 # power
 # games
+# lp - для блютуза
 
 # sudo usermod -aG realtime $USER
 # sudo usermod -aG audio $USER
@@ -51,5 +52,6 @@ sudo gpasswd -d $USER имя_группы
 # sudo usermod -aG render $USER
 # sudo usermod -aG power $USER
 # sudo usermod -aG games $USER
+# sudo usermod -aG lp $USER
 
 # =============================================
