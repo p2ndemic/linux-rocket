@@ -1,4 +1,8 @@
 # Исправление проблем с Avahi. Если вы не используете Avahi, который в основном используется для локальных сетевых служб (принтеры и т.д). То вы можете просто отключить эту службу
+# От avahi зависят некоторые пакеты, поэтому зачастую этот мусорный сервис устанавливается как зависимость приложений, таких как например: ├─ pipewire-pulse и ├─ libcups
+# Проверка зависимостей: pactree -r avahi
+
+
 # Зачастую при работе с Systemd-Resolved вы будете получать следующую ошибку:
 
 # avahi-daemon[732]: *** WARNING: Detected another IPv4 mDNS stack running on this host. This makes mDNS unreliable and is thus not recommended. ***
