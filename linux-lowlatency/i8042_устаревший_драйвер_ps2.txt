@@ -1,0 +1,11 @@
+❯ sudo journalctl -p 5 -xb
+
+сен 26 12:39:30 px kernel: i8042: PNP: PS/2 appears to have AUX port disabled, if this is incorrect please boot with i8042.nopnp
+сен 26 12:39:30 px kernel: i8042: Warning: Keylock active
+
+А можно ли вообще не загружать драйвер? 
+
+Только если пересобрать ядро без CONFIG_SERIO_I8042=y.
+В стандартном ядре Arch (linux или linux-lts) он встроен как built-in, и нельзя выгрузить или отключить полностью — только через параметры. 
+
+Но комбинация i8042.nopnp i8042.noaux i8042.nokbd i8042.unlock — это максимально близко к "удалению" без пересборки ядра. 
