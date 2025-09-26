@@ -1,0 +1,71 @@
+
+# sudo: journalctl -p 4 -xb | sort | uniq
+# dbus-broker-launch[727]: Activation request for 'org.freedesktop.home1' failed: The systemd unit 'dbus-org.freedesktop.home1.service' could not be found.
+
+Это распространённая ошибка на Arch Linux (и производных, как Manjaro), связанная с модулем PAM pam_systemd_home.so, который пытается активировать сервис systemd-homed через D-Bus. Сервис systemd-homed отвечает за управление "переносимыми" домашними директориями (например, с шифрованием LUKS), но по умолчанию он не включён, и unit dbus-org.freedesktop.home1.service (алиас для systemd-homed.service) просто не существует. Из-за этого D-Bus (в твоём случае dbus-broker) выдаёт предупреждение при попытке аутентификации (логин, sudo и т.д.).
+Это не критично — система работает, но логи засоряются. Вот как исправить:
+
+
+# Исправление:
+
+1. Проверить статус systemd-homed:
+
+❯ sudo systemctl status systemd-homed.service
+○ systemd-homed.service - Home Area Manager
+     Loaded: loaded (/usr/lib/systemd/system/systemd-homed.service; disabled; preset: enabled)
+     Active: inactive (dead)
+       Docs: man:systemd-homed.service(8)
+             man:org.freedesktop.home1(5)
+
+2. Деактивировать и замаскировать systemd-homed.service
+# systemctl status systemd-homed
+
+❯ sudo systemctl disable --now systemd-homed.service && sudo systemctl mask systemd-homed.service
+
+3. Найти все вхождения строки pam_systemd_home.so в файлах PAM:
+
+❯ sudo grep -r "pam_systemd_home.so" /etc/pam.d/
+/etc/pam.d/system-auth:-auth      [success=2 default=ignore]  pam_systemd_home.so
+/etc/pam.d/system-auth:-account   [success=1 default=ignore]  pam_systemd_home.so
+/etc/pam.d/system-auth:-password  [success=1 default=ignore]  pam_systemd_home.so
+/etc/pam.d/system-auth:-session   optional                    pam_systemd_home.so
+
+~
+
+❯ cat /etc/pam.d/system-auth
+#%PAM-1.0
+
+auth       required                    pam_faillock.so      preauth
+# Optionally use requisite above if you do not want to prompt for the password
+# on locked accounts.
+-auth      [success=2 default=ignore]  pam_systemd_home.so
+auth       [success=1 default=bad]     pam_unix.so          try_first_pass nullok
+auth       [default=die]               pam_faillock.so      authfail
+auth       optional                    pam_permit.so
+auth       required                    pam_env.so
+auth       required                    pam_faillock.so      authsucc
+# If you drop the above call to pam_faillock.so the lock will be done also
+# on non-consecutive authentication failures.
+
+-account   [success=1 default=ignore]  pam_systemd_home.so
+account    required                    pam_unix.so
+account    optional                    pam_permit.so
+account    required                    pam_time.so
+
+-password  [success=1 default=ignore]  pam_systemd_home.so
+password   required                    pam_unix.so          try_first_pass nullok shadow
+password   optional                    pam_permit.so
+
+-session   optional                    pam_systemd_home.so
+session    required                    pam_limits.so
+session    required                    pam_unix.so
+session    optional                    pam_permit.so
+
+4. Закомментировать строки с pam_systemd_home.so в /etc/pam.d/system-auth
+
+❯ sudo sed -i '/pam_systemd_home.so/s/^/# /' /etc/pam.d/system-auth
+
+Что делает:
+sed -i: Редактирует файл на месте (in-place).
+/pam_systemd_home.so/: Ищет строки, содержащие эту подстроку.
+s/^/# /: Заменяет начало строки (^) на #  (пробел для читаемости)
