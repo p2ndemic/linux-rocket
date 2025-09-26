@@ -69,3 +69,8 @@ session    optional                    pam_permit.so
 sed -i: Редактирует файл на месте (in-place).
 /pam_systemd_home.so/: Ищет строки, содержащие эту подстроку.
 s/^/# /: Заменяет начало строки (^) на #  (пробел для читаемости)
+
+
+Без пробела:
+❯ sudo sed -i '/pam_systemd_home.so/s/^/#/' /etc/pam.d/system-auth 
+
