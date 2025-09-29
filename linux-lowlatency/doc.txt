@@ -45,6 +45,9 @@ sudo gpasswd -d $USER имя_группы
 # power
 # games
 # lp - для блютуза
+# storage - программ монтирования
+
+# wheel - для админских прав (нужна доп инфа)
 
 # sudo usermod -aG realtime $USER
 # sudo usermod -aG audio $USER
