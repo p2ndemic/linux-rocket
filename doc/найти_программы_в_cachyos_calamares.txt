@@ -1,0 +1,2 @@
+Находится тут:
+https://github.com/CachyOS/cachyos-calamares/blob/cachyos-systemd-qt6/src/modules/netinstall/netinstall.yaml
