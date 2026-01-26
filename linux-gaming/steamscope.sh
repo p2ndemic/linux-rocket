@@ -380,8 +380,8 @@ TUNED_DEFAULT_PROFILE="balanced"
 # ========== НАСТРОЙКИ MANGOHUD ==========
 
 # Включить MangoHud (оверлей производительности)
+# MangoHud будет использовать конфиг из: \$XDG_CONFIG_HOME/MangoHud/MangoHud.conf
 MANGOHUD_ENABLED="true"
-MANGOHUD_CONFIG="fps,position=top-left,font_size=24,offset_x=10,offset_y=10"
 
 # ========== ПЕРЕМЕННЫЕ ОКРУЖЕНИЯ ==========
 
@@ -462,7 +462,6 @@ source "$CONFIG_FILE"
 : "${TUNED_PERFORMANCE_PROFILE:=performance}"
 : "${TUNED_DEFAULT_PROFILE:=balanced}"
 : "${MANGOHUD_ENABLED:=true}"
-: "${MANGOHUD_CONFIG:=fps,position=top-left,font_size=24}"
 
 echo "╔══════════════════════════════════════════════╗"
 echo "║            Запуск Steamscope                 ║"
@@ -538,7 +537,6 @@ fi
 MANGOHUD_ARGS=""
 if [[ "${MANGOHUD_ENABLED,,}" == "true" ]]; then
   export MANGOHUD=1
-  [ -n "$MANGOHUD_CONFIG" ] && export MANGOHUD_CONFIG="$MANGOHUD_CONFIG"
   MANGOHUD_ARGS="--mangoapp"
 fi
 
