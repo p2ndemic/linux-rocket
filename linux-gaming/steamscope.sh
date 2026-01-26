@@ -59,8 +59,6 @@ check_steam_dependencies() {
     "lib32-libpulse"           # 32-битный PulseAudio
     "lib32-openal"             # 32-битный OpenAL
     "lib32-nss"                # 32-битный NSS
-    "lib32-libcups"            # 32-битный CUPS
-    "lib32-sdl2"               # 32-битный SDL2
     "lib32-freetype2"          # 32-битные шрифты
     "lib32-fontconfig"         # 32-битная конфигурация шрифтов
     "ttf-liberation"           # Шрифты Liberation
@@ -86,7 +84,6 @@ check_steam_dependencies() {
       "nvidia-utils"
       "lib32-nvidia-utils"
       "nvidia-settings"
-      "libva-nvidia-driver"
     )
   fi
   
@@ -96,8 +93,6 @@ check_steam_dependencies() {
     gpu_deps+=(
       "vulkan-radeon"
       "lib32-vulkan-radeon"
-      "libva-mesa-driver"
-      "lib32-libva-mesa-driver"
     )
   fi
   
@@ -108,8 +103,6 @@ check_steam_dependencies() {
       "vulkan-intel"
       "lib32-vulkan-intel"
       "intel-media-driver"
-      "libva-intel-driver"
-      "lib32-libva-intel-driver"
       "intel-compute-runtime"
     )
   fi
