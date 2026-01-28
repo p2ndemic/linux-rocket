@@ -46,7 +46,10 @@ sudo gpasswd -d $USER имя_группы
 # games
 # lp - для блютуза
 # storage - программ монтирования
+# disk
 # input
+# tty
+# rfkill
 
 # wheel - для админских прав (нужна доп инфа)
 
