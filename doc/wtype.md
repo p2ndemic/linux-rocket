@@ -3,7 +3,7 @@
 Для отправки **Super + U** выполните следующую команду в терминале:
 
 ```bash
-wtype -M logo u -m logo
+wtype -M win u -m win
 
 ```
 
@@ -36,7 +36,7 @@ wtype -M 125 u -m 125
 Вот команда для отправки **Super + Shift + U**:
 
 ```bash
-wtype -M logo -M shift u -m logo -m shift
+wtype -M win -M shift u -m win -m shift
 
 ```
 
