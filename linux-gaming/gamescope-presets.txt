@@ -36,3 +36,14 @@ env LD_PRELOAD="" PROTON_USE_WAYLAND=1 -- gamescope --rt -W 2560 -H 1600 -w 1280
 
 env -u LD_PRELOAD PROTON_USE_WAYLAND=1 -- gamescope --rt -W 2560 -H 1600 -w 1280 -h 800 -f -r 120 --mangoapp -- %command%
 
+
+# https://github.com/Kron4ek/Conty
+
+WINEPREFIX=$HOME/Projects/wine-conty/ $HOME/Projects/conty_lite_dwarfs.sh wine '/home/admin/Projects/bulletstorm/Setup.exe'
+
+WINEPREFIX=$HOME/Projects/wine-conty/ $HOME/Projects/conty_lite_dwarfs.sh gamescope --rt -W 2560 -H 1600 -w 1280 -h 800 -b -r 120 -- wine '/home/admin/Projects/bulletstorm/Setup.exe'
+
+
+WINEPREFIX=$HOME/Projects/wine-conty/ ./conty_lite_dwarfs.sh gamescope --rt -W 2560 -H 1600 -w 1280 -h 800 -b -r 120 -- wine '/home/admin/Projects/wasteland_3/setup_wasteland_3_unity-patch-2_(64bit)_(88052).exe'
+
+WINEPREFIX=$HOME/Projects/wine-conty/ ./conty_lite_dwarfs.sh gamescope --rt -W 2560 -H 1600 -w 1280 -h 800 -b -r 120 -- wine '/home/admin/Projects/bulletstorm/Setup.exe'
