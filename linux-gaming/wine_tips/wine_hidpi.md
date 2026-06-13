@@ -51,10 +51,12 @@ To fix that you need to enable “forced high DPI aware” behavior in Wine:
 
 Open a simple text editor, paste:
 
+```
 Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers]
 @="~ HIGHDPIAWARE"
+```
 
 then save as highdpiaware.reg. Finally, run wine regedit /path/to/highdpiaware.reg to import this setting into your prefix’s registry.
 
