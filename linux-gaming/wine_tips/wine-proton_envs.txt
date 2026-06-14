@@ -1,1 +1,16 @@
+# ══════════════════════════════════════════════════════════════════════
+# Ref: https://github.com/doitsujin/dxvk/wiki/Driver-support
+# Ref: https://github.com/doitsujin/dxvk/wiki/Configuration
+# ──────────────────────────────────────────────────────────────────────
 
+DXVK_CONFIG="dxgi.enableHDR = False; dxgi.syncInterval = 0; d3d9.presentInterval = 0; dxvk.enableDescriptorHeap = True; dxvk.enableDescriptorBuffer = True"
+
+# ══════════════════════════════════════════════════════════════════════
+# Ref: https://www.phoronix.com/news/VKD3D-Proton-Descriptor-Heaps
+# Ref: https://github.com/HansKristian-Work/vkd3d-proton#environment-variables
+
+VKD3D_CONFIG=nodxr,descriptor_heap
+
+# VKD3D_SWAPCHAIN_PRESENT_MODE:
+# [ IMMEDIATE, MAILBOX, FIFO, FIFO_RELAXED, FIFO_LATEST_READY ]
+VKD3D_SWAPCHAIN_PRESENT_MODE=IMMEDIATE
