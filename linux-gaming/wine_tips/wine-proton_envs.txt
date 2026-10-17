@@ -3,7 +3,7 @@
 # Ref: https://github.com/doitsujin/dxvk/wiki/Configuration
 # ──────────────────────────────────────────────────────────────────────
 
-DXVK_CONFIG="dxgi.enableHDR = False; dxgi.syncInterval = 0; d3d9.presentInterval = 0; dxvk.enableDescriptorHeap = True; dxvk.enableDescriptorBuffer = True"
+DXVK_CONFIG="dxgi.enableHDR = False; dxgi.syncInterval = 0; d3d9.presentInterval = 0; dxvk.enableDescriptorHeap = True; dxvk.enableDescriptorBuffer = False"
 
 # ══════════════════════════════════════════════════════════════════════
 # Ref: https://www.phoronix.com/news/VKD3D-Proton-Descriptor-Heaps
